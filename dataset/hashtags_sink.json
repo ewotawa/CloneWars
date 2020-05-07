@@ -1,0 +1,117 @@
+{
+	"name": "hashtags_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CloneWars_database_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SystemTimeStamp",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Sentiment",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SentimentCount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SentimentScore",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "AhsokaTano",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AnakinSkywalker",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BoKatan",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Maul",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ObiWanKenobi",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CaptainRex",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BabyYoda",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiegeOfMandalore",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "StarWars",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CloneWars",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TheMandalorian",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "AhsokaLives",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Jedi",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Sith",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MayThe4th",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "hashtags"
+		}
+	}
+}

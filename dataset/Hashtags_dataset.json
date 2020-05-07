@@ -1,0 +1,80 @@
+{
+	"name": "Hashtags_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ewtwittersentiment_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "*.json",
+				"container": "countsbycharacter"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"SystemTimeStamp": {
+					"type": "string"
+				},
+				"Sentiment": {
+					"type": "string"
+				},
+				"SentimentCount": {
+					"type": "integer"
+				},
+				"SentimentScore": {
+					"type": "number"
+				},
+				"AhsokaTano": {
+					"type": "integer"
+				},
+				"AnakinSkywzalker": {
+					"type": "integer"
+				},
+				"BoKatan": {
+					"type": "integer"
+				},
+				"Maul": {
+					"type": "integer"
+				},
+				"ObiWanKenobi": {
+					"type": "integer"
+				},
+				"CaptainRex": {
+					"type": "integer"
+				},
+				"BabyYoda": {
+					"type": "integer"
+				},
+				"SiegeOfMandalore": {
+					"type": "integer"
+				},
+				"StarWars": {
+					"type": "integer"
+				},
+				"CloneWars": {
+					"type": "integer"
+				},
+				"TheMandalorian": {
+					"type": "integer"
+				},
+				"AhsokaLives": {
+					"type": "integer"
+				},
+				"Jedi": {
+					"type": "integer"
+				},
+				"Sith": {
+					"type": "integer"
+				},
+				"MayThe4th": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}
