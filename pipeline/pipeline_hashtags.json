@@ -32,7 +32,183 @@
 					"sink": {
 						"type": "AzureSqlSink"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['SystemTimeStamp']"
+								},
+								"sink": {
+									"name": "SystemTimeStamp",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Sentiment']"
+								},
+								"sink": {
+									"name": "Sentiment",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SentimentCount']"
+								},
+								"sink": {
+									"name": "SentimentCount",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SentimentScore']"
+								},
+								"sink": {
+									"name": "SentimentScore",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AhsokaTano']"
+								},
+								"sink": {
+									"name": "AhsokaTano",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AnakinSkywzalker']"
+								},
+								"sink": {
+									"name": "AnakinSkywalker",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BoKatan']"
+								},
+								"sink": {
+									"name": "BoKatan",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Maul']"
+								},
+								"sink": {
+									"name": "Maul",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ObiWanKenobi']"
+								},
+								"sink": {
+									"name": "ObiWanKenobi",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['CaptainRex']"
+								},
+								"sink": {
+									"name": "CaptainRex",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['BabyYoda']"
+								},
+								"sink": {
+									"name": "BabyYoda",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SiegeOfMandalore']"
+								},
+								"sink": {
+									"name": "SiegeOfMandalore",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['StarWars']"
+								},
+								"sink": {
+									"name": "StarWars",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['CloneWars']"
+								},
+								"sink": {
+									"name": "CloneWars",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['TheMandalorian']"
+								},
+								"sink": {
+									"name": "TheMandalorian",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AhsokaLives']"
+								},
+								"sink": {
+									"name": "AhsokaLives",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Jedi']"
+								},
+								"sink": {
+									"name": "Jedi",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Sith']"
+								},
+								"sink": {
+									"name": "Sith",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['MayThe4th']"
+								},
+								"sink": {
+									"name": "MayThe4th",
+									"type": "Int32"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
