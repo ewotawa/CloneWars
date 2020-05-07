@@ -1,11 +1,18 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline_hashtags",
 	"properties": {
 		"activities": [
 			{
 				"name": "Hashtags_BlobToSql",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Stored Procedure - Truncate Hashtags",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
