@@ -1,0 +1,164 @@
+{
+	"name": "tweets_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CloneWars_database_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "created_at",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "tweets_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "id_str",
+				"type": "nvarchar"
+			},
+			{
+				"name": "text",
+				"type": "nvarchar"
+			},
+			{
+				"name": "source",
+				"type": "nvarchar"
+			},
+			{
+				"name": "truncated",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "in_reply_to_status_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "in_reply_to_status_id_str",
+				"type": "nvarchar"
+			},
+			{
+				"name": "in_reply_to_user_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "in_reply_to_user_id_str",
+				"type": "nvarchar"
+			},
+			{
+				"name": "in_reply_to_screen_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "twitter_user",
+				"type": "nvarchar"
+			},
+			{
+				"name": "geo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "coordinates",
+				"type": "nvarchar"
+			},
+			{
+				"name": "place",
+				"type": "nvarchar"
+			},
+			{
+				"name": "contributors",
+				"type": "nvarchar"
+			},
+			{
+				"name": "retweeted_status",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_quote_status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "quote_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "reply_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "retweet_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "favorite_count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "entities",
+				"type": "nvarchar"
+			},
+			{
+				"name": "favorited",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "retweeted",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "filter_level",
+				"type": "nvarchar"
+			},
+			{
+				"name": "lang",
+				"type": "nvarchar"
+			},
+			{
+				"name": "timestamp_ms",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EventProcessaedUtcTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PartitionId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EventEnqueuedUtcTime",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tweets"
+		}
+	}
+}

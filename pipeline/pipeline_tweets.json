@@ -1,0 +1,304 @@
+{
+	"name": "pipeline_tweets",
+	"properties": {
+		"activities": [
+			{
+				"name": "Tweets_BlobToSql",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['created_at']"
+								},
+								"sink": {
+									"name": "created_at",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['id_str']"
+								},
+								"sink": {
+									"name": "id_str",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['text']"
+								},
+								"sink": {
+									"name": "text",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['source']"
+								},
+								"sink": {
+									"name": "source",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['truncated']"
+								},
+								"sink": {
+									"name": "truncated",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['in_reply_to_status_id']"
+								},
+								"sink": {
+									"name": "in_reply_to_status_id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['in_reply_to_status_id_str']"
+								},
+								"sink": {
+									"name": "in_reply_to_status_id_str",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['in_reply_to_user_id']"
+								},
+								"sink": {
+									"name": "in_reply_to_user_id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['in_reply_to_user_id_str']"
+								},
+								"sink": {
+									"name": "in_reply_to_user_id_str",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['in_reply_to_screen_name']"
+								},
+								"sink": {
+									"name": "in_reply_to_screen_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['geo']"
+								},
+								"sink": {
+									"name": "geo",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['coordinates']"
+								},
+								"sink": {
+									"name": "coordinates",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['place']"
+								},
+								"sink": {
+									"name": "place",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['contributors']"
+								},
+								"sink": {
+									"name": "contributors",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['is_quote_status']"
+								},
+								"sink": {
+									"name": "is_quote_status",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['quote_count']"
+								},
+								"sink": {
+									"name": "quote_count",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['reply_count']"
+								},
+								"sink": {
+									"name": "reply_count",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['retweet_count']"
+								},
+								"sink": {
+									"name": "retweet_count",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['favorite_count']"
+								},
+								"sink": {
+									"name": "favorite_count",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['favorited']"
+								},
+								"sink": {
+									"name": "favorited",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['retweeted']"
+								},
+								"sink": {
+									"name": "retweeted",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['filter_level']"
+								},
+								"sink": {
+									"name": "filter_level",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['lang']"
+								},
+								"sink": {
+									"name": "lang",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['timestamp_ms']"
+								},
+								"sink": {
+									"name": "timestamp_ms",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['EventProcessedUtcTime']"
+								},
+								"sink": {
+									"name": "EventProcessaedUtcTime",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"path": "$['PartitionId']"
+								},
+								"sink": {
+									"name": "PartitionId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "$['EventEnqueuedUtcTime']"
+								},
+								"sink": {
+									"name": "EventEnqueuedUtcTime",
+									"type": "DateTime"
+								}
+							}
+						],
+						"collectionReference": ""
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "tweets_dataset",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "tweets_sink",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
