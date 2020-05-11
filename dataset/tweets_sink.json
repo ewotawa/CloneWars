@@ -19,8 +19,8 @@
 			},
 			{
 				"name": "id",
-				"type": "int",
-				"precision": 10
+				"type": "bigint",
+				"precision": 19
 			},
 			{
 				"name": "id_str",
