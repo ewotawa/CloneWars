@@ -93,15 +93,6 @@
 							},
 							{
 								"source": {
-									"path": "$['geo']"
-								},
-								"sink": {
-									"name": "geo",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['coordinates']"
 								},
 								"sink": {
