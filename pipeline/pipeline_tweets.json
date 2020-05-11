@@ -44,7 +44,7 @@
 								},
 								"sink": {
 									"name": "created_at",
-									"type": "DateTime"
+									"type": "String"
 								}
 							},
 							{
@@ -52,7 +52,7 @@
 									"path": "$['id']"
 								},
 								"sink": {
-									"name": "ID",
+									"name": "id",
 									"type": "Int32"
 								}
 							},
@@ -90,51 +90,6 @@
 								"sink": {
 									"name": "truncated",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['in_reply_to_status_id']"
-								},
-								"sink": {
-									"name": "in_reply_to_status_id",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['in_reply_to_status_id_str']"
-								},
-								"sink": {
-									"name": "in_reply_to_status_id_str",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['in_reply_to_user_id']"
-								},
-								"sink": {
-									"name": "in_reply_to_user_id",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['in_reply_to_user_id_str']"
-								},
-								"sink": {
-									"name": "in_reply_to_user_id_str",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "$['in_reply_to_screen_name']"
-								},
-								"sink": {
-									"name": "in_reply_to_screen_name",
-									"type": "String"
 								}
 							},
 							{
@@ -238,6 +193,15 @@
 							},
 							{
 								"source": {
+									"path": "$['possibly_sensitive']"
+								},
+								"sink": {
+									"name": "possibly_sensitive",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"path": "$['filter_level']"
 								},
 								"sink": {
@@ -268,8 +232,8 @@
 									"path": "$['EventProcessedUtcTime']"
 								},
 								"sink": {
-									"name": "EventProcessaedUtcTime",
-									"type": "DateTime"
+									"name": "EventProcessedUtcTime",
+									"type": "String"
 								}
 							},
 							{
@@ -287,7 +251,7 @@
 								},
 								"sink": {
 									"name": "EventEnqueuedUtcTime",
-									"type": "DateTime"
+									"type": "String"
 								}
 							}
 						],
