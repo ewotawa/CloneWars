@@ -212,7 +212,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Hashtags_dataset",
+						"referenceName": "hashtags_dataset",
 						"type": "DatasetReference"
 					}
 				],
