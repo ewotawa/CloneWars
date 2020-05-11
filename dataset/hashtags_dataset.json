@@ -1,5 +1,5 @@
 {
-	"name": "Hashtags_dataset",
+	"name": "hashtags_dataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ewtwittersentiment_linkedservice",
