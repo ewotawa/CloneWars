@@ -49,14 +49,6 @@
 							},
 							{
 								"source": {
-									"path": "$['id']"
-								},
-								"sink": {
-									"name": "id (bigint)"
-								}
-							},
-							{
-								"source": {
 									"path": "$['id_str']"
 								},
 								"sink": {
