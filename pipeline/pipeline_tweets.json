@@ -93,15 +93,6 @@
 							},
 							{
 								"source": {
-									"path": "$['coordinates']"
-								},
-								"sink": {
-									"name": "coordinates",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['contributors']"
 								},
 								"sink": {

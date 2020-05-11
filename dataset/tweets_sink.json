@@ -40,10 +40,6 @@
 				"precision": 10
 			},
 			{
-				"name": "coordinates",
-				"type": "nvarchar"
-			},
-			{
 				"name": "contributors",
 				"type": "nvarchar"
 			},
