@@ -111,15 +111,6 @@
 							},
 							{
 								"source": {
-									"path": "$['place']"
-								},
-								"sink": {
-									"name": "place",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"path": "$['contributors']"
 								},
 								"sink": {

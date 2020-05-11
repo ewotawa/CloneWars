@@ -48,10 +48,6 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "place",
-				"type": "nvarchar"
-			},
-			{
 				"name": "contributors",
 				"type": "nvarchar"
 			},
