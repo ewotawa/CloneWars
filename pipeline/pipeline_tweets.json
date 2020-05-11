@@ -61,8 +61,7 @@
 									"path": "$['text']"
 								},
 								"sink": {
-									"name": "text",
-									"type": "String"
+									"name": "text (text)"
 								}
 							},
 							{
