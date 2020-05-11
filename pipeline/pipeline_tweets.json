@@ -52,8 +52,7 @@
 									"path": "$['id']"
 								},
 								"sink": {
-									"name": "id",
-									"type": "Int32"
+									"name": "id (bigint)"
 								}
 							},
 							{
