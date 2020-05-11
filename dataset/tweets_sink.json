@@ -40,10 +40,6 @@
 				"precision": 10
 			},
 			{
-				"name": "geo",
-				"type": "nvarchar"
-			},
-			{
 				"name": "coordinates",
 				"type": "nvarchar"
 			},
