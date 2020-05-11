@@ -5,7 +5,14 @@
 			{
 				"name": "Tweets_BlobToSql",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Stored Procedure - Truncate Tweets",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -297,6 +304,26 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Stored Procedure - Truncate Tweets",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[truncate_tweets]"
+				},
+				"linkedServiceName": {
+					"referenceName": "CloneWars_database_linkedservice",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
