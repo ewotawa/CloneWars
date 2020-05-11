@@ -9,18 +9,16 @@
 		"type": "AzureSqlTable",
 		"schema": [
 			{
-				"name": "ID",
+				"name": "SQL_ID",
 				"type": "int",
 				"precision": 10
 			},
 			{
 				"name": "created_at",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "nvarchar"
 			},
 			{
-				"name": "tweets_id",
+				"name": "id",
 				"type": "int",
 				"precision": 10
 			},
@@ -42,32 +40,6 @@
 				"precision": 10
 			},
 			{
-				"name": "in_reply_to_status_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "in_reply_to_status_id_str",
-				"type": "nvarchar"
-			},
-			{
-				"name": "in_reply_to_user_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "in_reply_to_user_id_str",
-				"type": "nvarchar"
-			},
-			{
-				"name": "in_reply_to_screen_name",
-				"type": "nvarchar"
-			},
-			{
-				"name": "twitter_user",
-				"type": "nvarchar"
-			},
-			{
 				"name": "geo",
 				"type": "nvarchar"
 			},
@@ -81,10 +53,6 @@
 			},
 			{
 				"name": "contributors",
-				"type": "nvarchar"
-			},
-			{
-				"name": "retweeted_status",
 				"type": "nvarchar"
 			},
 			{
@@ -113,8 +81,20 @@
 				"precision": 10
 			},
 			{
-				"name": "entities",
+				"name": "entities_hashtags_text",
 				"type": "nvarchar"
+			},
+			{
+				"name": "entities_hashtags_indices",
+				"type": "varbinary"
+			},
+			{
+				"name": "entities_urls",
+				"type": "varbinary"
+			},
+			{
+				"name": "entities_symbols",
+				"type": "varbinary"
 			},
 			{
 				"name": "favorited",
@@ -123,6 +103,11 @@
 			},
 			{
 				"name": "retweeted",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "possibly_sensitive",
 				"type": "int",
 				"precision": 10
 			},
@@ -139,10 +124,8 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "EventProcessaedUtcTime",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"name": "EventProcessedUtcTime",
+				"type": "nvarchar"
 			},
 			{
 				"name": "PartitionId",
@@ -151,9 +134,7 @@
 			},
 			{
 				"name": "EventEnqueuedUtcTime",
-				"type": "datetime",
-				"precision": 23,
-				"scale": 3
+				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {
