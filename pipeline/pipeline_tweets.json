@@ -49,15 +49,6 @@
 							},
 							{
 								"source": {
-									"path": "$['id']"
-								},
-								"sink": {
-									"name": "id",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
 									"path": "$['id_str']"
 								},
 								"sink": {
