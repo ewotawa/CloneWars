@@ -130,15 +130,6 @@
 			{
 				"name": "EventEnqueuedUtcTime",
 				"type": "nvarchar"
-			},
-			{
-				"name": "quoted_status_id",
-				"type": "int",
-				"precision": 10
-			},
-			{
-				"name": "quoted_status_id_str",
-				"type": "nvarchar"
 			}
 		],
 		"typeProperties": {

@@ -244,24 +244,6 @@
 									"name": "EventEnqueuedUtcTime",
 									"type": "String"
 								}
-							},
-							{
-								"source": {
-									"path": "$['quoted_status_id']"
-								},
-								"sink": {
-									"name": "quoted_status_id",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"path": "$['quoted_status_id_str']"
-								},
-								"sink": {
-									"name": "quoted_status_id_str",
-									"type": "String"
-								}
 							}
 						],
 						"collectionReference": "",
