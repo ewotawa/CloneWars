@@ -15,11 +15,11 @@
 			},
 			{
 				"name": "created_at",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "id_str",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "text",
@@ -27,7 +27,7 @@
 			},
 			{
 				"name": "source",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "truncated",
@@ -48,7 +48,7 @@
 			},
 			{
 				"name": "contributors",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "is_quote_status",
@@ -81,7 +81,7 @@
 			},
 			{
 				"name": "entities_hashtags_indices",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "entities_urls",
@@ -89,7 +89,7 @@
 			},
 			{
 				"name": "entities_symbols",
-				"type": "varbinary"
+				"type": "text"
 			},
 			{
 				"name": "favorited",
@@ -108,19 +108,19 @@
 			},
 			{
 				"name": "filter_level",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "lang",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "timestamp_ms",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "EventProcessedUtcTime",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "PartitionId",
@@ -129,7 +129,7 @@
 			},
 			{
 				"name": "EventEnqueuedUtcTime",
-				"type": "nvarchar"
+				"type": "text"
 			}
 		],
 		"typeProperties": {
