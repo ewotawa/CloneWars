@@ -18,6 +18,11 @@
 				"type": "nvarchar"
 			},
 			{
+				"name": "id",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
 				"name": "id_str",
 				"type": "nvarchar"
 			},
@@ -33,6 +38,18 @@
 				"name": "truncated",
 				"type": "int",
 				"precision": 10
+			},
+			{
+				"name": "geo",
+				"type": "text"
+			},
+			{
+				"name": "coordinates",
+				"type": "text"
+			},
+			{
+				"name": "place",
+				"type": "text"
 			},
 			{
 				"name": "contributors",
@@ -65,15 +82,15 @@
 			},
 			{
 				"name": "entities_hashtags_text",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "entities_hashtags_indices",
-				"type": "varbinary"
+				"type": "nvarchar"
 			},
 			{
 				"name": "entities_urls",
-				"type": "varbinary"
+				"type": "text"
 			},
 			{
 				"name": "entities_symbols",
@@ -117,6 +134,15 @@
 			},
 			{
 				"name": "EventEnqueuedUtcTime",
+				"type": "nvarchar"
+			},
+			{
+				"name": "quoted_status_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "quoted_status_id_str",
 				"type": "nvarchar"
 			}
 		],
