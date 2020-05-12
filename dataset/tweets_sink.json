@@ -18,11 +18,6 @@
 				"type": "nvarchar"
 			},
 			{
-				"name": "id",
-				"type": "bigint",
-				"precision": 19
-			},
-			{
 				"name": "id_str",
 				"type": "nvarchar"
 			},
