@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "ADFCloneWarsSentiment"
 		},
-		"ewtwittersentiment_linkedservice_connectionString": {
+		"CloneWars_database_linkedservice_connectionString": {
 			"value": ""
 		},
-		"CloneWars_database_linkedservice_connectionString": {
+		"ewtwittersentiment_linkedservice_connectionString": {
 			"value": ""
 		}
 	}
