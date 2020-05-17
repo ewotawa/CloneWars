@@ -1,0 +1,31 @@
+{
+	"name": "tweetSentiment_dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ewtwittersentiment_linkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "twittersentiment"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"text": {
+					"type": "string"
+				},
+				"Sentiment": {
+					"type": "string"
+				},
+				"Score": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
