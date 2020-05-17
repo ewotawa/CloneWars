@@ -19,7 +19,7 @@
 			},
 			{
 				"name": "Sentiment",
-				"type": "nvarchar"
+				"type": "text"
 			},
 			{
 				"name": "Score",

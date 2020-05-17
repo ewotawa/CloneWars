@@ -65,7 +65,8 @@
 									"type": "Double"
 								}
 							}
-						]
+						],
+						"mapComplexValuesToString": true
 					}
 				},
 				"inputs": [
