@@ -254,6 +254,82 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/tweetSentiment_dataset')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ewtwittersentiment_linkedservice",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "twittersentiment"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"text": {
+							"type": "string"
+						},
+						"Sentiment": {
+							"type": "string"
+						},
+						"Score": {
+							"type": "string"
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ewtwittersentiment_linkedservice')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tweetSentiment_sink')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "CloneWars_database_linkedservice",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "text",
+						"type": "text"
+					},
+					{
+						"name": "Sentiment",
+						"type": "text"
+					},
+					{
+						"name": "Score",
+						"type": "float",
+						"precision": 15
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "tweetsentiment"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/CloneWars_database_linkedservice')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/tweets_dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -3123,6 +3199,123 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/hashtags_dataset')]",
 				"[concat(variables('factoryId'), '/datasets/hashtags_sink')]",
+				"[concat(variables('factoryId'), '/linkedServices/CloneWars_database_linkedservice')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline_tweetSentiment')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "tweetSentiment_BlobToSql",
+						"type": "Copy",
+						"dependsOn": [
+							{
+								"activity": "Stored procedure - Truncate tweetSentiment",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "JsonSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": "*.json",
+									"enablePartitionDiscovery": false
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"path": "$['text']"
+										},
+										"sink": {
+											"name": "text",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['Sentiment']"
+										},
+										"sink": {
+											"name": "Sentiment",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"path": "$['Score']"
+										},
+										"sink": {
+											"name": "Score",
+											"type": "Double"
+										}
+									}
+								],
+								"mapComplexValuesToString": true
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "tweetSentiment_dataset",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "tweetSentiment_sink",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Stored procedure - Truncate tweetSentiment",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[truncate_tweetsentiment]"
+						},
+						"linkedServiceName": {
+							"referenceName": "CloneWars_database_linkedservice",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/tweetSentiment_dataset')]",
+				"[concat(variables('factoryId'), '/datasets/tweetSentiment_sink')]",
 				"[concat(variables('factoryId'), '/linkedServices/CloneWars_database_linkedservice')]"
 			]
 		},
