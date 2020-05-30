@@ -709,7 +709,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "*",
+						"fileName": {
+							"value": "*.json",
+							"type": "Expression"
+						},
 						"container": "countsbycharacter"
 					}
 				},
